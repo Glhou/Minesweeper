@@ -1,0 +1,10 @@
+<div id="app">
+    <div v-for="b in boutons">
+            <button  v-on:click="decouvre(b)" v-if="! b.decouvert">{{b.decouvert}}</button>
+            <button v-else>{{b.voisin}}</button>
+    </div>
+</div>
+
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src = "main.js"></script>
