@@ -1,14 +1,8 @@
 {
-  "name": "minesweeper",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "vue": "^2.6.14"
+    "vue": "^3.2.20"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.2.20"
   }
 }
