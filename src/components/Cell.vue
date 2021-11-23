@@ -46,15 +46,19 @@ export default {
     background-color: #b1b1b1 !important;
     height:100% !important;
     position: relative;
+    animation: trembleX 0.2s;
   }
   &-bomb {
-    background-color: #000000 !important;
+    background-color: #ff4400  !important;
     height:100% !important;
+    z-index: 100;
+    animation: explode 0.5s;
   }
   &-flag {
     background-color: #00a000 !important;
     height:100% !important;
     position: relative;
+    animation: trembleY 0.2s;
   }
 }
 .v-btn:not(.v-btn--round).v-size--default.square{
@@ -66,4 +70,56 @@ export default {
   height:100%;
   top: 25%
 }
+
+@keyframes trembleX {
+  0%{
+    transform: translateX(2px);
+  }
+  25%{
+    transform: translateX(-4px);
+  }
+  50%{
+    transform: translateX(+4px);
+  }
+  75%{
+    transform: translateX(-4px);
+  }
+  100%{
+    transform: translateX(2px);
+  }
+}
+
+@keyframes trembleY {
+  0%{
+    transform: translateY(2px);
+  }
+  25%{
+    transform: translateY(-4px);
+  }
+  50%{
+    transform: translateY(+4px);
+  }
+  75%{
+    transform: translateY(-4px);
+  }
+  100%{
+    transform: translateY(2px);
+  }
+}
+
+@keyframes explode {
+  0% {
+    transform :scale(1);
+    background : radial-gradient(#ff1e00, #ff3300);
+  }
+  50% {
+    transform: scale(5);
+    background : radial-gradient(#ff3c00, #ff8800);
+  }
+  100%{
+    transform: scale(1);
+    background : radial-gradient(#ff3c003b, #ff880069);
+  }
+}
+
 </style>
