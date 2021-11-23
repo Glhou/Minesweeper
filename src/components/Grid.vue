@@ -121,7 +121,7 @@ export default {
       for (var x=-1; x < 2; x++){
         for (var y=-1; y < 2; y++){
           const neighbour = this.findCell(cell.n + x, cell.m + y)
-          if (neighbour != null && neighbour != undefined){
+          if (neighbour != null && neighbour != undefined && neighbour.flag != true){
             neighbour.ouvert = true
           }
         }
@@ -169,7 +169,9 @@ export default {
       }
     },
     flag(cell){
+      if (cell.ouvert != true){
       cell.flag = !cell.flag
+      }
     },
     isWin(){
       const {grid} = this
