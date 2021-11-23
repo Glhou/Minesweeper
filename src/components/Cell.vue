@@ -1,10 +1,10 @@
 <template>
-  <div :class="getClass()">
+  <v-btn :class="getClass()">
     <div class="inside" v-if="cell.ouvert && cell.bombVoisin && !cell.bomb">
       {{ cell.bombVoisin }}
     </div>
     <div class="inside" v-if="cell.flag">&#9873;</div>
-  </div>
+  </v-btn>
 </template>
 
 <script>
@@ -20,15 +20,15 @@ export default {
     getClass() {
       const { cell } = this;
       if (cell.ouvert && !cell.bomb) {
-        return "cell-ouvert";
+        return "cell-ouvert square";
       }
       if (cell.flag) {
-        return "cell-flag";
+        return "cell-flag square";
       }
       if (cell.bomb && cell.ouvert) {
-        return "cell-bomb";
+        return "cell-bomb square";
       }
-      return "cell-base";
+      return "cell-base square";
     },
   },
 };
@@ -38,24 +38,27 @@ export default {
 .cell {
 
   &-base {
-    background-color: #7a7a7a;
-    height:100%
+    background-color: #7a7a7a !important;
+    height:100% !important;
   }
 
   &-ouvert {
-    background-color: #b1b1b1;
-    height:100%;
+    background-color: #b1b1b1 !important;
+    height:100% !important;
     position: relative;
   }
   &-bomb {
-    background-color: #000000;
-    height:100%
+    background-color: #000000 !important;
+    height:100% !important;
   }
   &-flag {
-    background-color: #00a000;
-    height:100%;
+    background-color: #00a000 !important;
+    height:100% !important;
     position: relative;
   }
+}
+.v-btn:not(.v-btn--round).v-size--default.square{
+  min-width: 0;
 }
 .inside{
   position:absolute;
