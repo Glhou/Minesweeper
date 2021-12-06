@@ -3,7 +3,7 @@
     <div class="inside" v-if="cell.ouvert && cell.bombVoisin && !cell.bomb">
       {{ cell.bombVoisin }}
     </div>
-    <div class="inside" v-if="cell.flag">&#9873;</div>
+    <div class="inside" v-if="cell.flag"><v-icon color="white">mdi-flag</v-icon></div>
   </v-btn>
 </template>
 
@@ -66,9 +66,9 @@ export default {
 }
 .inside{
   position:absolute;
-  width:100%;
-  height:100%;
-  top: 25%
+  // width:100%;
+  // height:100%;
+  // top: 25%
 }
 
 @keyframes trembleX {

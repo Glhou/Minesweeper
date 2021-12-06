@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <a href="#" @click.prevent="initGrid"> Restart </a> -->
     <div v-if="this.win">Tu as gagné</div>
     <div class="box">
       <div class="container" :style="gridStyle()">
