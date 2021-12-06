@@ -1,7 +1,9 @@
 <template>
-  <div id="app">
-    <Grid :bombs="10" :cols="9" :rows="9" />
-  </div>
+  <v-app>
+    <div id="app">
+      <Grid :bombs="10" :cols="9" :rows="9" />
+    </div>
+  </v-app>
 </template>
 
 <script>

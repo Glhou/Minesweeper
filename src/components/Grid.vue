@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a href="#" @click.prevent="initGrid"> Restart </a>
+    <!-- <a href="#" @click.prevent="initGrid"> Restart </a> -->
     <div v-if="this.win">Tu as gagné</div>
     <div class="box">
       <div class="container" :style="gridStyle()">
@@ -15,6 +15,10 @@
         ></Cell>
       </div>
     </div>
+    <v-btn class="restart" color="primary" @click.prevent="initGrid">
+      <v-icon dark left>mdi-restart</v-icon>
+      Restart
+    </v-btn>
   </div>
 </template>
 
@@ -235,5 +239,9 @@ export default {
 }
 .item {
   grid-column: span 1 / span 1;
+}
+.restart {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 </style>
