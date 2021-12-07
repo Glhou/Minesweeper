@@ -192,6 +192,7 @@ export default {
           for (var c of grid) {
             if (c.bomb) {
               c.ouvert = true;
+              c.flag = false;
             }
           }
         }
