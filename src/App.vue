@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div id="app">
-      <Grid :bombs="10" :cols="9" :rows="9" />
+      <Grid :bombs="1" :cols="9" :rows="9" />
     </div>
   </v-app>
 </template>
@@ -25,5 +25,9 @@ export default {
   text-align: center;
   color: #2c3e50;
 
+}
+
+#confetti-canvas{
+  z-index:250;
 }
 </style>
