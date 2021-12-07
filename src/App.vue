@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div id="app">
-      <Grid :bombs="10" :cols="9" :rows="9" />
+      <Grid :bombs="1" :cols="9" :rows="9" />
     </div>
   </v-app>
 </template>
@@ -28,5 +28,9 @@ export default {
 
 .v-application--wrap{
   background: linear-gradient(#ff8800, #ff1e00);
+}
+
+#confetti-canvas{
+  z-index:250;
 }
 </style>
