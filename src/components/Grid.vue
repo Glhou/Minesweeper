@@ -307,4 +307,29 @@ export default {
   margin-top:10px;
   font-weight: bold;
 }
+
+.finished:hover{
+  animation: 1s ease-in-out trembleXY infinite;
+}
+@keyframes trembleXY {
+  0%{
+    transform: translate(0px,0px);
+  }
+  20%{
+    transform: translate(10px,10px);
+  }
+  40%{
+    transform: translate(+10px,-10px);
+  }
+  60%{
+    transform: translate(-10px,-10px);
+  }
+  80%{
+    transform: translate(-10px,+10px);
+  }
+  100%{
+    transform: translate(0px,0px);
+  }
+}
+
 </style>
