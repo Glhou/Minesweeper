@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div id="app">
-      <Grid :bombs="10" :cols="9" :rows="9" />
+      <Grid :bombs="10" :cols="7" :rows="9" />
     </div>
   </v-app>
 </template>
@@ -28,6 +28,7 @@ export default {
 
 .v-application--wrap{
   background-image: url("./assets/img/background.jpg");
+  background-size: cover;
 }
 
 #confetti-canvas{

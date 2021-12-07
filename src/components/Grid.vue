@@ -55,6 +55,7 @@ export default {
   mounted() {
     this.$nextTick(() => {
       this.initGrid();
+      this.size();
     });
   },
   props: {
@@ -241,13 +242,20 @@ export default {
       }
       return test;
     },
+    size(){
+      const {cols,rows} = this;
+      document.querySelector(".box").style.height = 4 * rows + "vw"
+      document.querySelector(".box").style.width = 4 * cols + "vw"
+    }
   },
   watch: {
     rows() {
       this.initGrid();
+      this.size();
     },
     cols() {
       this.initGrid();
+      this.size();
     },
     bombs() {
       this.initGrid();
@@ -259,8 +267,6 @@ export default {
 
 <style lang="scss" scoped>
 .box {
-  height: 60vh;
-  width: 60vh;
   margin: 0 auto;
   background-color: rgba(255,255,255,0.15);
   backdrop-filter: blur(5px);
