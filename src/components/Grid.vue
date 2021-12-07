@@ -35,6 +35,10 @@
 
 <script>
 import Cell from "./Cell.vue";
+import Vue from 'vue'
+import VueConfetti from 'vue-confetti'
+
+Vue.use(VueConfetti)
 
 export default {
   name: "Grid",
@@ -68,12 +72,22 @@ export default {
     },
   },
   methods: {
+    // confetis
+    start() {
+      this.$confetti.start();
+    },
+
+    stop() {
+      this.$confetti.stop();
+    },
+    // minesweeper
     initGrid() {
       const { cols, rows } = this;
       var { bombs } = this;
       const size = cols * rows;
       const grid = [];
       this.win = false;
+      this.stop();
       for (var i = 0; i < size; i++) {
         grid.push({
           id: i,
@@ -220,6 +234,9 @@ export default {
         if (!c.bomb && c.ouvert == false) {
           test = false;
         }
+      }
+      if (test == true){
+        this.start();
       }
       return test;
     },
