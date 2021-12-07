@@ -3,6 +3,7 @@
     <div class="inside" v-if="cell.ouvert && cell.bombVoisin && !cell.bomb">
       <span :class="getColor()">{{ cell.bombVoisin }}</span>
     </div>
+    <div class="inside" v-if="cell.bomb && cell.ouvert"><v-icon color="white" class="bomb-icon">mdi-bomb</v-icon></div>
     <div class="inside" v-if="cell.flag"><v-icon color="white">mdi-flag</v-icon></div>
   </v-btn>
 </template>
@@ -103,6 +104,9 @@ export default {
   // width:100%;
   // height:100%;
   // top: 25%
+}
+.bomb-icon {
+  font-size: 35px !important;
 }
 
 @keyframes trembleX {
