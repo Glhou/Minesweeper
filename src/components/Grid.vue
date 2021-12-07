@@ -73,6 +73,7 @@ export default {
       var { bombs } = this;
       const size = cols * rows;
       const grid = [];
+      this.win = false;
       for (var i = 0; i < size; i++) {
         grid.push({
           id: i,
@@ -201,6 +202,10 @@ export default {
     flag(cell) {
       if (cell.ouvert != true) {
         cell.flag = !cell.flag;
+      }
+      if (this.isWin()) {
+        this.finished = true;
+        this.win = true;
       }
     },
     isWin() {
