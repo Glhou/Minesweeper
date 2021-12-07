@@ -1,7 +1,7 @@
 <template>
   <v-btn :class="getClass()">
     <div class="inside" v-if="cell.ouvert && cell.bombVoisin && !cell.bomb">
-      {{ cell.bombVoisin }}
+      <span :class="getColor()">{{ cell.bombVoisin }}</span>
     </div>
     <div class="inside" v-if="cell.flag"><v-icon color="white">mdi-flag</v-icon></div>
   </v-btn>
@@ -30,6 +30,14 @@ export default {
       }
       return "cell-base square";
     },
+    getColor() {
+      const { cell } = this;
+      for (let i = 1; i < 9; i++) {
+        if (cell.bombVoisin == i){
+        return 'cell-'.concat('', i);
+        }
+      }
+    }
   },
 };
 </script>
@@ -60,12 +68,38 @@ export default {
     position: relative;
     animation: trembleY 0.2s;
   }
+  &-1 {
+    color: blue;
+  }
+  &-2 {
+    color: green;
+  }
+  &-3 {
+    color: red;
+  }
+  &-4 {
+    color: #1125B5;
+  }
+  &-5 {
+    color: #5211B5;
+  }
+  &-6 {
+    color: #930000;
+  }
+  &-7 {
+    color: #935900;
+  }
+  &-8 {
+    color: #930057;
+  }
+  
 }
 .v-btn:not(.v-btn--round).v-size--default.square{
   min-width: 0;
 }
 .inside{
   position:absolute;
+  font-size: 25px;
   // width:100%;
   // height:100%;
   // top: 25%
