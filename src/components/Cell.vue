@@ -47,12 +47,12 @@ export default {
 .cell {
 
   &-base {
-    background-color: #7a7a7a !important;
+    background-color: #302474 !important;
     height:100% !important;
   }
 
   &-ouvert {
-    background-color: #b1b1b1 !important;
+    background-color: #a69dcf !important;
     height:100% !important;
     position: relative;
     animation: trembleX 0.2s;
