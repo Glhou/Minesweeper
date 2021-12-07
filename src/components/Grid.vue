@@ -181,22 +181,24 @@ export default {
     
     reveal(cell) {
       const { grid } = this;
-      if (cell.bombVoisin == 0) {
-        this.recursiveOpen([cell],[]);
-      } else {
-        cell.ouvert = true;
-      }
-      if (cell.bomb == true) {
-        this.finished = true;
-        for (var c of grid) {
-          if (c.bomb) {
-            c.ouvert = true;
+        if(cell.flag == false){
+        if (cell.bombVoisin == 0) {
+          this.recursiveOpen([cell],[]);
+        } else {
+          cell.ouvert = true;
+        }
+        if (cell.bomb == true) {
+          this.finished = true;
+          for (var c of grid) {
+            if (c.bomb) {
+              c.ouvert = true;
+            }
           }
         }
-      }
-      if (this.isWin()) {
-        this.finished = true;
-        this.win = true;
+        if (this.isWin()) {
+          this.finished = true;
+          this.win = true;
+        }
       }
     },
     flag(cell) {
