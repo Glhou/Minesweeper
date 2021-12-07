@@ -24,6 +24,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
 
+.v-application--wrap{
+  background: linear-gradient(#ff8800, #ff1e00);
 }
 </style>

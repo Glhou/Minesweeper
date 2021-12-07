@@ -245,7 +245,8 @@ export default {
   height: 60vh;
   width: 60vh;
   margin: 0 auto;
-  background-color: #d6d6d6;
+  background-color: rgba(255,255,255,0.15);
+  backdrop-filter: blur(5px);
   position: relative;
   padding: 5px;
   margin-top: 60px;
