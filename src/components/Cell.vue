@@ -79,13 +79,13 @@ export default {
     color: red;
   }
   &-4 {
-    color: #1125B5;
+    color: #930000;
   }
   &-5 {
     color: #5211B5;
   }
   &-6 {
-    color: #930000;
+    color: #0b7e6e;
   }
   &-7 {
     color: #935900;
