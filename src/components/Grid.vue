@@ -1,6 +1,22 @@
 <template>
   <div>
-    <div v-if="this.win">Tu as gagné</div>
+    <div v-if="this.finished">
+      <div class="grey-bg"></div>
+      <div class="card finished">
+        <div class="card-body">
+          <div v-if="this.win">
+            Tu as gagné !!!
+          </div>
+          <div v-else>
+            Tu as perdu
+          </div>
+          <v-btn class="restart" color="primary" @click.prevent="initGrid">
+            <v-icon dark left>mdi-restart</v-icon>
+            Restart
+          </v-btn>
+        </div>
+      </div>
+    </div>
     <div class="box">
       <div class="container" :style="gridStyle()">
         <Cell
@@ -14,10 +30,6 @@
         ></Cell>
       </div>
     </div>
-    <v-btn class="restart" color="primary" @click.prevent="initGrid">
-      <v-icon dark left>mdi-restart</v-icon>
-      Restart
-    </v-btn>
   </div>
 </template>
 
@@ -228,6 +240,7 @@ export default {
   background-color: #d6d6d6;
   position: relative;
   padding: 5px;
+  margin-top: 60px;
 }
 
 .container {
@@ -242,5 +255,30 @@ export default {
 .restart {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.grey-bg{
+  position: absolute;
+  top:0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  z-index: 200;
+}
+
+.finished{
+  z-index: 300;
+  position:absolute;
+  left:0;
+  right:0;
+  margin-left: auto;
+  margin-right: auto;
+  width:300px;
+  background-color: white;
+  border-radius: 10px;
+}
+.card-body{
+  margin-top:10px;
+  font-weight: bold;
 }
 </style>
