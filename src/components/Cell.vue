@@ -99,7 +99,7 @@ export default {
 
 .inside{
   position:absolute;
-  font-size: 1.2em;
+  font-size: 2vw;
   top: 0; bottom: 0; left: 0; right: 0;
   margin: auto;
   display: flex;
@@ -108,6 +108,12 @@ export default {
   // width:100%;
   // height:100%;
   // top: 25%
+  @media (max-width:1000px){
+    font-size: 3vw;
+  }
+  @media (max-width:400px){
+    font-size: 5vw;
+  }
 }
 .bomb-icon {
   font-size: 35px !important;
