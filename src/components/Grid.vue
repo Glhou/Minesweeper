@@ -251,12 +251,28 @@ export default {
     size(){
       const {cols,rows} = this;
       if (window.matchMedia("(min-width: 1000px)").matches){
-        document.querySelector(".box").style.height = 4 * rows + "vw"
-        document.querySelector(".box").style.width = 4 * cols + "vw"
+        if (cols < 10){
+          document.querySelector(".box").style.height = 4 * rows + "vw"
+          document.querySelector(".box").style.width = 4 * cols + "vw"
+        }else if (cols < 14){
+          document.querySelector(".box").style.height = 3 * rows + "vw"
+          document.querySelector(".box").style.width = 3 * cols + "vw"
+        }else if (cols < 20){
+          document.querySelector(".box").style.height = 2 * rows + "vw"
+          document.querySelector(".box").style.width = 2 * cols + "vw"
+        }
       }
       else if (window.matchMedia("(min-width: 600px)").matches){
-        document.querySelector(".box").style.height = 8 * rows + "vw"
-        document.querySelector(".box").style.width = 8 * cols + "vw"
+        if (cols < 9){
+          document.querySelector(".box").style.height = 6 * rows + "vw"
+          document.querySelector(".box").style.width = 6 * cols + "vw"
+        }else if (cols < 14){
+          document.querySelector(".box").style.height = 4 * rows + "vw"
+          document.querySelector(".box").style.width = 4 * cols + "vw"
+        }else if (cols < 20){
+          document.querySelector(".box").style.height = 3 * rows + "vw"
+          document.querySelector(".box").style.width = 3 * cols + "vw"
+        }
       }
       else {
         document.querySelector(".box").style.height = 90 + "vw"
@@ -267,9 +283,11 @@ export default {
   watch: {
     rows() {
       this.initGrid();
+      this.size();
     },
     cols() {
       this.initGrid();
+      this.size();
     },
     bombs() {
       this.initGrid();
@@ -286,7 +304,7 @@ export default {
   backdrop-filter: blur(5px);
   position: relative;
   padding: 5px;
-  margin-top: 60px;
+  margin-top: 20px;
 }
 
 .container {
