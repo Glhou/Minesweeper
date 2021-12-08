@@ -2,7 +2,7 @@
   <v-app>
     <div class="menu">
       <div class="inside-menu">
-        <v-slider thumb-label="always" value="5" v-model.number="size" color="orange" track-color="orange darken-3" thumb-color="orange" dense step="1" max="20" min="5"></v-slider>
+        <v-slider thumb-label="always" value="10" v-model.number="size" color="orange" track-color="orange darken-3" thumb-color="orange" dense step="1" max="20" min="5"></v-slider>
       </div>
     </div>
     <div id="app">
