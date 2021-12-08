@@ -1,12 +1,13 @@
 <template>
-  <v-btn :class="getClass()">
+  <div :class="getClass()" class="btn">
     <div class="inside" v-if="cell.ouvert && cell.bombVoisin && !cell.bomb">
       <span :class="getColor()">{{ cell.bombVoisin }}</span>
     </div>
     <div class="inside" v-if="cell.bomb && cell.ouvert"><v-icon color="white" class="bomb-icon">mdi-bomb</v-icon></div>
     <div class="inside" v-if="cell.flag"><v-icon color="white">mdi-flag</v-icon></div>
-  </v-btn>
+  </div>
 </template>
+
 
 <script>
 export default {
@@ -95,18 +96,25 @@ export default {
   }
   
 }
-.v-btn:not(.v-btn--round).v-size--default.square{
-  min-width: 0;
-}
+
 .inside{
   position:absolute;
-  font-size: 25px;
+  font-size: 1.2em;
+  top: 0; bottom: 0; left: 0; right: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   // width:100%;
   // height:100%;
   // top: 25%
 }
 .bomb-icon {
   font-size: 35px !important;
+}
+
+.btn{
+  border-radius: 5px;
 }
 
 @keyframes trembleX {
