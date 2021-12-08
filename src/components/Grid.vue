@@ -52,6 +52,12 @@ export default {
       grid: [],
     };
   },
+  created() {
+  window.addEventListener("resize", this.size);
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.size);
+  },
   mounted() {
     this.$nextTick(() => {
       this.initGrid();
@@ -244,18 +250,26 @@ export default {
     },
     size(){
       const {cols,rows} = this;
-      document.querySelector(".box").style.height = 4 * rows + "vw"
-      document.querySelector(".box").style.width = 4 * cols + "vw"
+      if (window.matchMedia("(min-width: 1000px)").matches){
+        document.querySelector(".box").style.height = 4 * rows + "vw"
+        document.querySelector(".box").style.width = 4 * cols + "vw"
+      }
+      else if (window.matchMedia("(min-width: 600px)").matches){
+        document.querySelector(".box").style.height = 8 * rows + "vw"
+        document.querySelector(".box").style.width = 8 * cols + "vw"
+      }
+      else {
+        document.querySelector(".box").style.height = 90 + "vw"
+        document.querySelector(".box").style.width = 90 + "vw"
+      }
     }
   },
   watch: {
     rows() {
       this.initGrid();
-      this.size();
     },
     cols() {
       this.initGrid();
-      this.size();
     },
     bombs() {
       this.initGrid();
